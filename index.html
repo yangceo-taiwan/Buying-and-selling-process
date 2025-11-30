@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>不動產買賣必修課 - 宏國地政｜易丞地政</title>
+    <meta name="description" content="買賣不動產是人生大事，流程繁瑣細節多。宏國地政特別整理了【不動產買賣必修課】系列影片，協助您順利完成交易！">
+    <meta property="og:title" content="不動產買賣必修課 - 宏國地政｜易丞地政">
+    <meta property="og:description" content="精選 6 堂必修課：過戶流程、稅務規劃、防詐騙、代償細節一次搞懂。">
+    <meta property="og:image" content="宏國、易丞地政-楊翊晟代書名片.jpg">
+    
     <style>
         :root {
             --primary-color: #1a5f7a;   /* 品牌深藍 */
@@ -39,11 +44,11 @@
             border-bottom: 5px solid var(--accent-color);
         }
 
-        /* 修改後的 Logo 樣式，適應名片形狀 */
+        /* Logo 樣式 */
         .logo-img {
-            max-width: 220px; /* 稍微調寬以適應名片 */
+            max-width: 220px; 
             height: auto;
-            border-radius: 10px; /* 改為圓角矩形 */
+            border-radius: 10px;
             border: 3px solid var(--accent-color);
             margin-bottom: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -77,6 +82,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
             border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
         }
 
         .video-card:hover {
@@ -105,6 +112,7 @@
             color: var(--primary-color);
             margin: 0;
             font-weight: bold;
+            line-height: 1.4;
         }
 
         /* 影片描述內容 */
@@ -112,6 +120,7 @@
             padding: 0 20px 20px 20px;
             color: var(--text-secondary);
             font-size: 0.95em;
+            flex-grow: 1;
         }
 
         .highlight-box {
@@ -121,13 +130,10 @@
             margin: 15px 0;
             border-radius: 4px;
         }
+        
+        strong { color: #d84315; }
 
-        .highlight-box ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-
-        /* 響應式影片容器 (維持 16:9)，確保顯示封面並可點擊播放 */
+        /* 響應式影片容器 (維持 16:9) */
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 ratio */
@@ -153,6 +159,7 @@
             background-color: var(--card-bg);
             border-radius: 15px;
             color: var(--text-secondary);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
         }
 
         .yt-btn {
@@ -173,7 +180,7 @@
             .video-list {
                 grid-template-columns: 1fr 1fr; /* 電腦版並排顯示 */
             }
-            /* 讓第一支重要影片橫跨兩欄 */
+            /* 讓第一支重要影片橫跨兩欄，更加顯眼 */
             .video-card:first-child { 
                 grid-column: span 2; 
             }
@@ -202,7 +209,7 @@
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/Qn5OTTTC4Xg" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Qn5OTTTC4Xg" allowfullscreen title="房屋過戶六步驟"></iframe>
             </div>
             <div class="card-header">
                 <span class="video-number">單元一</span>
@@ -220,7 +227,7 @@
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/1X-3-p50Qt8" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/1X-3-p50Qt8" allowfullscreen title="不動產稅務解析"></iframe>
             </div>
             <div class="card-header">
                 <span class="video-number">單元二</span>
@@ -228,13 +235,17 @@
             </div>
             <div class="card-content">
                 <p>其實從<strong>「買」</strong>、<strong>「持有」</strong>、<strong>「賣」</strong>三個階段，政府都在收錢！</p>
-                <p>這部影片將帶您解析：契稅、印花稅、地價稅、房屋稅以及大魔王「房地合一稅」的課徵時機與計算方式。</p>
+                <div class="highlight-box">
+                    <strong>稅務全解析：</strong>
+                    契稅、印花稅、地價稅、房屋稅及大魔王「房地合一稅」。
+                </div>
+                <p>這部影片將帶您解析各種稅金的課徵時機與計算方式。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/5KWCcvU4x28" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/5KWCcvU4x28" allowfullscreen title="防止不動產詐騙"></iframe>
             </div>
             <div class="card-header">
                 <span class="video-number">單元三</span>
@@ -244,7 +255,7 @@
                 <p>【地籍異動即時通】守護你的房子，別讓詐騙集團有機可乘！</p>
                 <div class="highlight-box">
                     <strong>🔔 免費申請，安心保障：</strong><br>
-                    只要申請完成，房子有任何異動（過戶、抵押、查封），你會在<strong>第一時間</strong>收到簡訊或 Email 通知！
+                    只要申請完成，房子有任何異動（過戶、抵押、查封），你會在第一時間收到通知！
                 </div>
                 <p>📌 申請方式：可臨櫃辦理，或使用自然人憑證線上申請。</p>
             </div>
@@ -252,7 +263,7 @@
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/raRatE1MI90" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/raRatE1MI90" allowfullscreen title="代償流程解說"></iframe>
             </div>
             <div class="card-header">
                 <span class="video-number">單元四</span>
@@ -260,14 +271,17 @@
             </div>
             <div class="card-content">
                 <p>許多買方在簽約時會緊張：「屋主還有貸款沒繳清，這樣過戶安全嗎？」</p>
-                <p><strong>答案是：可以的！✅</strong></p>
-                <p>這就是所謂的<strong>「代償」</strong>流程。透過買方的銀行直接幫賣方清償舊貸款，是業界標準且安全的做法。影片將詳細解說這個資金流向如何保障雙方權益。</p>
+                <div class="highlight-box">
+                    <strong>✅ 答案是：可以的！</strong><br>
+                    這就是所謂的<strong>「代償」</strong>流程。
+                </div>
+                <p>透過買方的銀行直接幫賣方清償舊貸款，是業界標準且安全的做法。影片將詳細解說這個資金流向。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/HXfjSYan0uo" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/HXfjSYan0uo" allowfullscreen title="印鑑證明申請"></iframe>
             </div>
             <div class="card-header">
                 <span class="video-number">單元五</span>
@@ -280,13 +294,13 @@
                     只有 <strong>賣方</strong> 需要申請印鑑證明！<br>
                     (除非買方有特殊狀況)
                 </div>
-                <p>如果不方便回戶籍地申請，現在還有「線上聲明」或「行動自然人憑證」等替代方案，影片教您怎麼做！</p>
+                <p>如果不方便回戶籍地申請，現在還有「線上聲明」或「行動自然人憑證」等替代方案！</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/s5bZP73miQE" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/s5bZP73miQE" allowfullscreen title="國稅局通知書解析"></iframe>
             </div>
             <div class="card-header">
                 <span class="video-number">單元六</span>
@@ -294,7 +308,11 @@
             </div>
             <div class="card-content">
                 <p>「明明還沒過戶，為什麼國稅局知道我要賣房子？」別緊張！這是正常的。</p>
-                <p>當我們代書申報增值稅與契稅時，系統會同步通知國稅局。這封信通常是善意提醒賣方記得在期限內申報<strong>「房地合一稅」</strong>，以免受罰。影片將為您解析這封「神秘信件」。</p>
+                <div class="highlight-box">
+                    <strong>💡 善意提醒：</strong><br>
+                    這封信通常是提醒賣方記得在期限內申報<strong>「房地合一稅」</strong>。
+                </div>
+                <p>當我們代書申報增值稅與契稅時，系統會同步通知國稅局。影片將為您解析這封「神秘信件」。</p>
             </div>
         </article>
 
