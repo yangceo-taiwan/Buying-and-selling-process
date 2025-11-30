@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不動產買賣必修課 - 宏國地政｜易丞地政</title>
+    <style>
+        :root {
+            --primary-color: #1a5f7a;   /* 品牌深藍 */
+            --accent-color: #d4a017;    /* 品牌金 */
+            --bg-color: #f4f4f4;        /* 背景灰 */
+            --card-bg: #ffffff;         /* 卡片白 */
+            --text-color: #333333;
+            --text-secondary: #666666;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- 頭部區塊 --- */
+        header {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        /* 修改後的 Logo 樣式，適應名片形狀 */
+        .logo-img {
+            max-width: 220px; /* 稍微調寬以適應名片 */
+            height: auto;
+            border-radius: 10px; /* 改為圓角矩形 */
+            border: 3px solid var(--accent-color);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 10px 0;
+            font-size: 1.8em;
+        }
+
+        .intro-text {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- 影片列表區塊 --- */
+        .video-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        /* 卡片樣式 */
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* 影片標題 */
+        .card-header {
+            padding: 20px 20px 10px 20px;
+        }
+
+        .video-number {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .video-title {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* 影片描述內容 */
+        .card-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .highlight-box {
+            background-color: #eef7fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* 響應式影片容器 (維持 16:9)，確保顯示封面並可點擊播放 */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- 底部 --- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            color: var(--text-secondary);
+        }
+
+        .yt-btn {
+            display: inline-block;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+        }
+        .yt-btn:hover { background-color: #cc0000; }
+
+        @media (min-width: 768px) {
+            .video-list {
+                grid-template-columns: 1fr 1fr; /* 電腦版並排顯示 */
+            }
+            /* 讓第一支重要影片橫跨兩欄 */
+            .video-card:first-child { 
+                grid-column: span 2; 
+            }
+            .video-card:first-child .video-title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <header>
+        <img src="宏國、易丞地政-楊翊晟代書名片.jpg" alt="宏國地政｜易丞地政 Logo" class="logo-img">
+        <h1>🥇 宏國地政｜易丞地政 ✨</h1>
+        <div class="intro-text">
+            <p>您好 👋</p>
+            <p>買賣不動產是人生大事，流程繁瑣細節多。<br>
+            我們特別整理了<strong>【不動產買賣必修課】</strong>系列影片，<br>
+            希望能用最淺顯易懂的方式，協助您順利完成本次交易！🏠</p>
+        </div>
+    </header>
+
+    <div class="video-list">
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Qn5OTTTC4Xg" allowfullscreen></iframe>
+            </div>
+            <div class="card-header">
+                <span class="video-number">單元一</span>
+                <h2 class="video-title">🧾 房屋過戶六步驟，一次搞懂</h2>
+            </div>
+            <div class="card-content">
+                <p>你知道房屋過戶從簽約到交屋，其實有六個關鍵階段嗎❓</p>
+                <div class="highlight-box">
+                    <strong>重點流程：</strong>
+                    簽約 ➔ 用印 ➔ 完稅 ➔ 過戶 ➔ 代償 ➔ 交屋
+                </div>
+                <p>每個階段都有該注意的細節，看完這部影片，讓你對交易進度瞭若指掌！</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/1X-3-p50Qt8" allowfullscreen></iframe>
+            </div>
+            <div class="card-header">
+                <span class="video-number">單元二</span>
+                <h2 class="video-title">💰 你以為買房只要繳房貸嗎❓</h2>
+            </div>
+            <div class="card-content">
+                <p>其實從<strong>「買」</strong>、<strong>「持有」</strong>、<strong>「賣」</strong>三個階段，政府都在收錢！</p>
+                <p>這部影片將帶您解析：契稅、印花稅、地價稅、房屋稅以及大魔王「房地合一稅」的課徵時機與計算方式。</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/5KWCcvU4x28" allowfullscreen></iframe>
+            </div>
+            <div class="card-header">
+                <span class="video-number">單元三</span>
+                <h2 class="video-title">🛡️ 如何防止不動產詐騙❓</h2>
+            </div>
+            <div class="card-content">
+                <p>【地籍異動即時通】守護你的房子，別讓詐騙集團有機可乘！</p>
+                <div class="highlight-box">
+                    <strong>🔔 免費申請，安心保障：</strong><br>
+                    只要申請完成，房子有任何異動（過戶、抵押、查封），你會在<strong>第一時間</strong>收到簡訊或 Email 通知！
+                </div>
+                <p>📌 申請方式：可臨櫃辦理，或使用自然人憑證線上申請。</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/raRatE1MI90" allowfullscreen></iframe>
+            </div>
+            <div class="card-header">
+                <span class="video-number">單元四</span>
+                <h2 class="video-title">🏦 賣方房子還沒塗銷抵押權，可以過戶嗎？</h2>
+            </div>
+            <div class="card-content">
+                <p>許多買方在簽約時會緊張：「屋主還有貸款沒繳清，這樣過戶安全嗎？」</p>
+                <p><strong>答案是：可以的！✅</strong></p>
+                <p>這就是所謂的<strong>「代償」</strong>流程。透過買方的銀行直接幫賣方清償舊貸款，是業界標準且安全的做法。影片將詳細解說這個資金流向如何保障雙方權益。</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/HXfjSYan0uo" allowfullscreen></iframe>
+            </div>
+            <div class="card-header">
+                <span class="video-number">單元五</span>
+                <h2 class="video-title">📝 買方還是賣方要申請印鑑證明呢❓</h2>
+            </div>
+            <div class="card-content">
+                <p>在不動產過戶中，到底是誰要跑戶政事務所？</p>
+                <div class="highlight-box">
+                    <strong>🔑 關鍵解答：</strong><br>
+                    只有 <strong>賣方</strong> 需要申請印鑑證明！<br>
+                    (除非買方有特殊狀況)
+                </div>
+                <p>如果不方便回戶籍地申請，現在還有「線上聲明」或「行動自然人憑證」等替代方案，影片教您怎麼做！</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/s5bZP73miQE" allowfullscreen></iframe>
+            </div>
+            <div class="card-header">
+                <span class="video-number">單元六</span>
+                <h2 class="video-title">📩 還沒過戶就收到國稅局通知書❓</h2>
+            </div>
+            <div class="card-content">
+                <p>「明明還沒過戶，為什麼國稅局知道我要賣房子？」別緊張！這是正常的。</p>
+                <p>當我們代書申報增值稅與契稅時，系統會同步通知國稅局。這封信通常是善意提醒賣方記得在期限內申報<strong>「房地合一稅」</strong>，以免受罰。影片將為您解析這封「神秘信件」。</p>
+            </div>
+        </article>
+
+    </div>
+
+    <footer>
+        <p>💡 服務專線：06-2582589<br>
+        📮 地址：台南市北區文賢路1080巷11號<br>
+        <strong>宏國地政｜易丞地政</strong> 全體同仁 祝您成交順利！🎉</p>
+        
+        <a href="https://www.youtube.com/@ycl_real_estate8888" target="_blank" class="yt-btn">
+            📺 訂閱我們的 YouTube 頻道
+        </a>
+    </footer>
+
+</div>
+
+</body>
+</html>
