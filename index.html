@@ -3,137 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>不動產買賣必修課 - 宏國地政｜易丞地政</title>
-    <meta name="description" content="買賣不動產是人生大事，流程繁瑣細節多。宏國地政特別整理了【不動產買賣必修課】系列影片，協助您順利完成交易！">
-    <meta property="og:title" content="不動產買賣必修課 - 宏國地政｜易丞地政">
-    <meta property="og:description" content="精選 6 堂必修課：過戶流程、稅務規劃、防詐騙、代償細節一次搞懂。">
-    <meta property="og:image" content="宏國、易丞地政-楊翊晟代書名片.jpg">
+    <title>房產知識影音庫 - 宏國地政｜易丞地政</title>
+    <meta name="description" content="宏國地政｜易丞地政精心製作的房產知識影片，涵蓋貸款、稅務、繼承與市場趨勢，助您做出最正確的決策。">
     
     <style>
         :root {
             --primary-color: #1a5f7a;   /* 品牌深藍 */
             --accent-color: #d4a017;    /* 品牌金 */
-            --bg-color: #f4f4f4;        /* 背景灰 */
-            --card-bg: #ffffff;         /* 卡片白 */
+            --bg-color: #f4f7f6;        /* 淺灰背景 */
+            --card-bg: #ffffff;
             --text-color: #333333;
             --text-secondary: #666666;
+            
+            /* 標籤顏色 */
+            --tag-loan: #2196f3;
+            --tag-tax: #f44336;
+            --tag-policy: #4caf50;
+            --tag-trend: #ff9800;
+            
+            /* 懸浮按鈕顏色 */
+            --btn-yt: #FF0000;          /* YouTube 紅 */
+            --btn-line: #06c755;
+            --btn-review: #f1c40f;
         }
 
         body {
             font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
             background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
+            padding: 20px 20px 120px 20px; /* 底部留白增加，避免被懸浮按鈕擋住 */
             color: var(--text-color);
             line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* --- 頭部區塊 --- */
+        /* --- Header 優化 --- */
         header {
             background-color: var(--card-bg);
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             text-align: center;
             margin-bottom: 30px;
-            border-bottom: 5px solid var(--accent-color);
+            border-top: 6px solid var(--accent-color);
         }
 
-        /* Logo 樣式 */
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Logo 之間的間距 */
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
         .logo-img {
-            max-width: 220px; 
-            height: auto;
-            border-radius: 10px;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 70px; /* 統一高度 */
+            width: auto;
+            object-fit: contain; /* 保持比例不變形 */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* 輕微陰影增加立體感 */
         }
 
         h1 {
             color: var(--primary-color);
             margin: 10px 0;
             font-size: 1.8em;
+            letter-spacing: 1px;
         }
 
         .intro-text {
             color: var(--text-secondary);
-            font-size: 1.1em;
-            max-width: 700px;
+            font-size: 1.05em;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* --- 影片列表區塊 --- */
-        .video-list {
+        /* --- 影片網格區塊 --- */
+        .video-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 25px;
         }
 
-        /* 卡片樣式 */
         .video-card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
         }
 
         .video-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
-        /* 影片標題 */
-        .card-header {
-            padding: 20px 20px 10px 20px;
-        }
-
-        .video-number {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .video-title {
-            font-size: 1.3em;
-            color: var(--primary-color);
-            margin: 0;
-            font-weight: bold;
-            line-height: 1.4;
-        }
-
-        /* 影片描述內容 */
-        .card-content {
-            padding: 0 20px 20px 20px;
-            color: var(--text-secondary);
-            font-size: 0.95em;
-            flex-grow: 1;
-        }
-
-        .highlight-box {
-            background-color: #eef7fa;
-            border-left: 4px solid var(--accent-color);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        
-        strong { color: #d84315; }
-
-        /* 響應式影片容器 (維持 16:9) */
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 ratio */
@@ -144,49 +115,147 @@
 
         .video-wrapper iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
 
-        /* --- 底部 --- */
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px; /* 圓角更柔和 */
+            color: white;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 12px;
+            align-self: flex-start;
+            letter-spacing: 0.5px;
+        }
+        .tag-loan { background-color: var(--tag-loan); }
+        .tag-tax { background-color: var(--tag-tax); }
+        .tag-policy { background-color: var(--tag-policy); }
+        .tag-trend { background-color: var(--tag-trend); }
+
+        .video-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            line-height: 1.45;
+        }
+
+        .video-desc {
+            font-size: 0.95em;
+            color: #666;
+            margin: 0;
+            text-align: justify; /* 文字齊行 */
+        }
+
         footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 50px;
+            padding: 30px 20px;
             background-color: var(--card-bg);
             border-radius: 15px;
             color: var(--text-secondary);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+            font-size: 0.9em;
         }
 
-        .yt-btn {
-            display: inline-block;
-            background-color: #ff0000;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
+        /* --- 全新懸浮按鈕區塊 (Sticky Bottom) --- */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px); /* 毛玻璃效果 */
+            padding: 12px 15px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .sticky-btn {
+            flex: 1;
+            padding: 10px 5px;
             border-radius: 50px;
+            text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+            font-size: 0.95em;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap; /* 防止文字換行 */
+            color: white;
         }
-        .yt-btn:hover { background-color: #cc0000; }
 
+        /* 按鈕樣式定義 */
+        .btn-line {
+            background-color: var(--btn-line);
+            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.2);
+        }
+        
+        .btn-yt {
+            background-color: var(--btn-yt);
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.25);
+            /* 呼吸動畫 */
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-review {
+            background-color: #fff;
+            color: #333;
+            border: 2px solid var(--btn-review);
+        }
+
+        .sticky-btn:active { transform: scale(0.95); }
+
+        /* 呼吸動畫關鍵影格 */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 4px 10px rgba(255, 0, 0, 0.25); }
+            50% { transform: scale(1.03); box-shadow: 0 8px 15px rgba(255, 0, 0, 0.35); }
+            100% { transform: scale(1); box-shadow: 0 4px 10px rgba(255, 0, 0, 0.25); }
+        }
+
+        /* --- RWD 響應式調整 --- */
         @media (min-width: 768px) {
-            .video-list {
-                grid-template-columns: 1fr 1fr; /* 電腦版並排顯示 */
+            .video-grid { grid-template-columns: 1fr 1fr; } 
+            .sticky-footer { padding: 15px 30px; gap: 20px; }
+            .sticky-btn { padding: 12px 20px; font-size: 1.1em; max-width: 250px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .video-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+        
+        /* 手機版極限調整：確保三個按鈕放得下 */
+        @media (max-width: 480px) {
+            body { padding-bottom: 90px; }
+            .sticky-footer { padding: 10px 8px; gap: 8px; }
+            .sticky-btn { 
+                font-size: 0.85em; 
+                padding: 10px 0; 
             }
-            /* 讓第一支重要影片橫跨兩欄，更加顯眼 */
-            .video-card:first-child { 
-                grid-column: span 2; 
-            }
-            .video-card:first-child .video-title {
-                font-size: 1.6em;
-            }
+            /* 在極小螢幕隱藏部分輔助文字，改用圖示或簡寫 */
+            .btn-text-full { display: none; }
+            .btn-text-short { display: inline; }
+        }
+        
+        @media (min-width: 481px) {
+            .btn-text-short { display: none; }
+            .btn-text-full { display: inline; }
         }
     </style>
 </head>
@@ -195,139 +264,129 @@
 <div class="container">
     
     <header>
-        <img src="宏國、易丞地政-楊翊晟代書名片.jpg" alt="宏國地政｜易丞地政 Logo" class="logo-img">
-        <h1>🥇 宏國地政｜易丞地政 ✨</h1>
-        <div class="intro-text">
-            <p>您好 👋</p>
-            <p>買賣不動產是人生大事，流程繁瑣細節多。<br>
-            我們特別整理了<strong>【不動產買賣必修課】</strong>系列影片，<br>
-            希望能用最淺顯易懂的方式，協助您順利完成本次交易！🏠</p>
+        <div class="logo-wrapper">
+            <img src="宏國地政封面.jpg" alt="宏國地政" class="logo-img">
+            <span style="font-size: 20px; color: #ccc;">✕</span> <img src="易丞logo-01.jpg" alt="易丞地政" class="logo-img">
         </div>
+        <h1>🎥 房產知識影音庫</h1>
+        <p class="intro-text">
+            您好 👋 感謝您選擇我們服務！<br>
+            我們特別整理了這一系列影片，從貸款、稅務到市場趨勢，<br>希望能幫助您在不動產的路上走得更穩、更順。
+        </p>
     </header>
 
-    <div class="video-list">
+    <div class="video-grid">
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/Qn5OTTTC4Xg" allowfullscreen title="房屋過戶六步驟"></iframe>
-            </div>
-            <div class="card-header">
-                <span class="video-number">單元一</span>
-                <h2 class="video-title">🧾 房屋過戶六步驟，一次搞懂</h2>
+                <iframe src="https://www.youtube.com/embed/uyVrOQXURuA" allowfullscreen></iframe>
             </div>
             <div class="card-content">
-                <p>你知道房屋過戶從簽約到交屋，其實有六個關鍵階段嗎❓</p>
-                <div class="highlight-box">
-                    <strong>重點流程：</strong>
-                    簽約 ➔ 用印 ➔ 完稅 ➔ 過戶 ➔ 代償 ➔ 交屋
-                </div>
-                <p>每個階段都有該注意的細節，看完這部影片，讓你對交易進度瞭若指掌！</p>
+                <span class="tag tag-loan">💰 貸款觀念</span>
+                <h3 class="video-title">高薪不等於高信用？銀行看的是這個！</h3>
+                <p class="video-desc">月薪20萬也可能貸不到？了解「收支比」，掌握銀行核貸的關鍵秘密。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/1X-3-p50Qt8" allowfullscreen title="不動產稅務解析"></iframe>
-            </div>
-            <div class="card-header">
-                <span class="video-number">單元二</span>
-                <h2 class="video-title">💰 你以為買房只要繳房貸嗎❓</h2>
+                <iframe src="https://www.youtube.com/embed/MIlC3nmtmrc" allowfullscreen></iframe>
             </div>
             <div class="card-content">
-                <p>其實從<strong>「買」</strong>、<strong>「持有」</strong>、<strong>「賣」</strong>三個階段，政府都在收錢！</p>
-                <div class="highlight-box">
-                    <strong>稅務全解析：</strong>
-                    契稅、印花稅、地價稅、房屋稅及大魔王「房地合一稅」。
-                </div>
-                <p>這部影片將帶您解析各種稅金的課徵時機與計算方式。</p>
+                <span class="tag tag-loan">💰 額度試算</span>
+                <h3 class="video-title">你真的能貸到8成嗎？買房前先算清楚</h3>
+                <p class="video-desc">別讓夢想家變法拍屋！教您如何自我評估真實的負擔能力。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/5KWCcvU4x28" allowfullscreen title="防止不動產詐騙"></iframe>
-            </div>
-            <div class="card-header">
-                <span class="video-number">單元三</span>
-                <h2 class="video-title">🛡️ 如何防止不動產詐騙❓</h2>
+                <iframe src="https://www.youtube.com/embed/41VxTgUsk_E" allowfullscreen></iframe>
             </div>
             <div class="card-content">
-                <p>【地籍異動即時通】守護你的房子，別讓詐騙集團有機可乘！</p>
-                <div class="highlight-box">
-                    <strong>🔔 免費申請，安心保障：</strong><br>
-                    只要申請完成，房子有任何異動（過戶、抵押、查封），你會在第一時間收到通知！
-                </div>
-                <p>📌 申請方式：可臨櫃辦理，或使用自然人憑證線上申請。</p>
+                <span class="tag tag-policy">🌲 新青安</span>
+                <h3 class="video-title">首購跟新青安，該如何選擇？</h3>
+                <p class="video-desc">大家都推新青安，但真的適合你嗎？分析兩者差異與限制。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/raRatE1MI90" allowfullscreen title="代償流程解說"></iframe>
-            </div>
-            <div class="card-header">
-                <span class="video-number">單元四</span>
-                <h2 class="video-title">🏦 賣方房子還沒塗銷抵押權，可以過戶嗎？</h2>
+                <iframe src="https://www.youtube.com/embed/3tcLcY8YpHA" allowfullscreen></iframe>
             </div>
             <div class="card-content">
-                <p>許多買方在簽約時會緊張：「屋主還有貸款沒繳清，這樣過戶安全嗎？」</p>
-                <div class="highlight-box">
-                    <strong>✅ 答案是：可以的！</strong><br>
-                    這就是所謂的<strong>「代償」</strong>流程。
-                </div>
-                <p>透過買方的銀行直接幫賣方清償舊貸款，是業界標準且安全的做法。影片將詳細解說這個資金流向。</p>
+                <span class="tag tag-policy">🏠 繼承解惑</span>
+                <h3 class="video-title">繼承了長輩房子，新青安資格還在嗎？</h3>
+                <p class="video-desc">許多人的誤區！只要注意「持分面積」，你的優惠資格可能還在。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/HXfjSYan0uo" allowfullscreen title="印鑑證明申請"></iframe>
-            </div>
-            <div class="card-header">
-                <span class="video-number">單元五</span>
-                <h2 class="video-title">📝 買方還是賣方要申請印鑑證明呢❓</h2>
+                <iframe src="https://www.youtube.com/embed/1X-3-p50Qt8" allowfullscreen></iframe>
             </div>
             <div class="card-content">
-                <p>在不動產過戶中，到底是誰要跑戶政事務所？</p>
-                <div class="highlight-box">
-                    <strong>🔑 關鍵解答：</strong><br>
-                    只有 <strong>賣方</strong> 需要申請印鑑證明！<br>
-                    (除非買方有特殊狀況)
-                </div>
-                <p>如果不方便回戶籍地申請，現在還有「線上聲明」或「行動自然人憑證」等替代方案！</p>
+                <span class="tag tag-tax">🧾 稅務攻略</span>
+                <h3 class="video-title">持有及移轉不動產，要繳哪些稅？</h3>
+                <p class="video-desc">從買、持有到賣，一次搞懂政府收的各種稅金。</p>
             </div>
         </article>
 
         <article class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/s5bZP73miQE" allowfullscreen title="國稅局通知書解析"></iframe>
-            </div>
-            <div class="card-header">
-                <span class="video-number">單元六</span>
-                <h2 class="video-title">📩 還沒過戶就收到國稅局通知書❓</h2>
+                <iframe src="https://www.youtube.com/embed/jL6OQuMa9-c" allowfullscreen></iframe>
             </div>
             <div class="card-content">
-                <p>「明明還沒過戶，為什麼國稅局知道我要賣房子？」別緊張！這是正常的。</p>
-                <div class="highlight-box">
-                    <strong>💡 善意提醒：</strong><br>
-                    這封信通常是提醒賣方記得在期限內申報<strong>「房地合一稅」</strong>。
-                </div>
-                <p>當我們代書申報增值稅與契稅時，系統會同步通知國稅局。影片將為您解析這封「神秘信件」。</p>
+                <span class="tag tag-tax">💸 房地合一</span>
+                <h3 class="video-title">出租房賣掉要課 45%？稅務迷思破解</h3>
+                <p class="video-desc">稅率看的是持有時間而非用途！教你如何正確節稅。</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/ykHkXm9XWQM" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <span class="tag tag-trend">📉 市場趨勢</span>
+                <h3 class="video-title">信用管制後，房貸怎麼貸？</h3>
+                <p class="video-desc">實務 vs 政策一次說清楚，掌握最新銀行放款動態。</p>
+            </div>
+        </article>
+
+        <article class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/YBqerjUN7-Q" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <span class="tag tag-trend">🔄 買賣風險</span>
+                <h3 class="video-title">買房不到一年想轉手？銀行規則必看</h3>
+                <p class="video-desc">短期買賣風險高，注意鑑價限制與重稅陷阱。</p>
             </div>
         </article>
 
     </div>
 
     <footer>
-        <p>💡 服務專線：06-2582589<br>
-        📮 地址：台南市北區文賢路1080巷11號<br>
-        <strong>宏國地政｜易丞地政</strong> 全體同仁 祝您成交順利！🎉</p>
-        
-        <a href="https://www.youtube.com/@ycl_real_estate8888" target="_blank" class="yt-btn">
-            📺 訂閱我們的 YouTube 頻道
-        </a>
+        <p><strong>宏國地政 × 易丞地政</strong><br>
+        感謝您的信任，期待未來能繼續為您服務！</p>
+        <p style="font-size:0.9em; color:#888;">📞 06-2582589 ｜ 📮 台南市北區文賢路1080巷11號</p>
     </footer>
 
+</div>
+
+<div class="sticky-footer">
+    <a href="https://www.youtube.com/@您的頻道ID?sub_confirmation=1" target="_blank" class="sticky-btn btn-yt">
+        ▶ <span class="btn-text-full">&nbsp;訂閱頻道看更多</span><span class="btn-text-short">訂閱頻道</span>
+    </a>
+
+    <a href="https://line.me/ti/g2/aVklWxyLP1RtfstQsslGQOlP4KViuFI7PPucdQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" class="sticky-btn btn-line">
+        💬 <span class="btn-text-full">&nbsp;加入VIP社群</span><span class="btn-text-short">VIP社群</span>
+    </a>
+    
+    <a href="https://g.page/r/CcUysPsgjeseEAI/review" target="_blank" class="sticky-btn btn-review">
+        🌟 <span class="btn-text-full">&nbsp;五星好評</span><span class="btn-text-short">給好評</span>
+    </a>
 </div>
 
 </body>
